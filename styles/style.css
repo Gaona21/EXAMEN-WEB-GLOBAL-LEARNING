@@ -51,6 +51,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: scale(1.2);
     transition: all 0.3s ease;
+    animation: titilar  0.5s infinite forwards;
 }
 
 .subMenu-contenedor {
@@ -70,6 +71,7 @@
     margin: 12px 0 12px 0;
     transform: scale(1.2);
     transition: all 0.3s ease;
+    animation: titilar  0.5s infinite forwards;
 }
 
 /* Instrucciones.html */
@@ -81,6 +83,22 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+}
+
+.cont-icono-atras{
+    width: 30px;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+}
+
+.cont-icono-atras:hover{
+    animation: titilar  0.5s infinite forwards;
+}
+
+.cont-icono-atras img{
+    width: 100%;
 }
 
 .btn-izquierda {
@@ -147,6 +165,24 @@
     animation: deslizarIzquierda 1s forwards;
 }
 
+.entrada {
+    animation: entrada 0.5s ease forwards;
+}
+
+@keyframes titilar{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
 @keyframes deslizarDerecha {
     0% {
         transform: translateX(0);
@@ -172,15 +208,11 @@
 }
 
 @keyframes entrada {
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
     }
-}
-
-.entrada {
-    animation: entrada 0.5s ease forwards;
 }
