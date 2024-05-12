@@ -18,12 +18,13 @@ function activate(e) {
          if (++currentMove == 2) {
 
             currentAttempts++;
-            document.querySelector('#stats').innerHTML = currentAttempts + ' intentos';
+            document.querySelector('#stats').innerHTML = currentAttempts + 'intentos';
 
             if (selectedCards[0].querySelectorAll('.face')[0].innerHTML == selectedCards[1].querySelectorAll('.face')[0].innerHTML) {
                selectedCards = [];
                currentMove = 0;
             }
+            
             else {
                setTimeout(() => {
                   selectedCards[0].classList.remove('active');
