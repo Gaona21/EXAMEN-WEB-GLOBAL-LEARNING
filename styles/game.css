@@ -6,9 +6,12 @@ body {
 
 main {
     justify-content: center;
-    margin: 4rem;
+    
+   margin: 4rem;
 }
 .container {
+    align-items: center;
+    justify-content: center;
     display: flex;
     gap: 1rem;
 }
@@ -22,29 +25,19 @@ font-size: 2rem;
 h1 {
     color: black;
     text-align: center;
-    padding-top: 1rem;
     font-size: 3rem;
 }
-
-#stats {
-    color: black;
-    padding: 1rem;
-    text-align: center;
-    width: calc(100% - 2rem);
-    font-size: 3rem;
- }
-
 
 
 #game {
      display: grid;
-    grid-template-columns: 1fr 1fr 1fr;   
+    grid-template-columns: 1fr 1fr 1fr 1fr;   
 }
 
 .card {
     width: 10rem;
     height: 10rem;
-    margin: 1rem;
+    margin: 0.5rem;
     position: relative;
     transition: transform 0.5s;
     transform-style: preserve-3d;
@@ -77,4 +70,16 @@ h1 {
 
 .card .back {
     border: 2px solid black;
+}
+
+.estadisticas {
+    border:1px solid black;
+    height: 8rem;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
 }
