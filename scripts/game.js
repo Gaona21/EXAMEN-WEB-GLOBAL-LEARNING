@@ -5,9 +5,9 @@ let valuesUsed = [];
 let counter = 0;
 let currentMove = 0;
 let currentAttempts = 0;
+let timer;
 
 let cardTemplate = '<div class="card"><div class="back"></div><div class="face"></div></div>';
-
 
 function activate(e) {
    if (currentMove < 2) {
@@ -25,9 +25,12 @@ function activate(e) {
                selectedCards = [];
                currentMove = 0;
 
-               if (selectedCards.length === totalCards) {
+               if (document.querySelectorAll('.card.active').length === totalCards) {
                   clearInterval(timer);
-               }
+                  saveGameStats(currentAttempts, counter);
+                  alert("¡Juego terminado!");
+              }
+               
             }
             
             else {
@@ -41,7 +44,6 @@ function activate(e) {
          }
          if (counter === 0) {
             startCounter();
-            document.querySelector('#t-restante').textContent = 'Tiempo: ' + counter+ 'segundos';
          }
       }
    }
@@ -58,6 +60,30 @@ function randomValue() {
    }
 }
 
+function startCounter() {
+   timer = setInterval(() => {
+       counter++;
+       document.querySelector('#t-restante').textContent = 'Tiempo: ' + counter + ' segundos';
+   }, 1000);
+}
+
+function saveGameStats(moves, time) {
+   let gameStats = {
+      moves: moves,
+      time: time
+   };
+   localStorage.setItem('gameStats', JSON.stringify(gameStats));
+}
+
+function loadGameStats() {
+   let gameStats =localStorage.getItem('gameStats');
+   if (gameStats) {
+      gameStats = JSON.parse(gameStats);
+      document.querySelector('#last-game-stats').textContent = `Último juego - Movimientos: ${gameStats.moves}, Tiempo: ${gameStats.time} segundos`;
+   }
+}
+
+loadGameStats();
 
 
 for (let i=0; i < totalCards; i++) {
@@ -68,11 +94,4 @@ for (let i=0; i < totalCards; i++) {
    randomValue();
    cards[i].querySelectorAll('.face')[0].innerHTML = valuesUsed[i];
    cards[i].querySelectorAll('.card')[0].addEventListener('click', activate);
-}
-
-function startCounter() {
-   timer = setInterval(() => {
-       counter++;
-       document.querySelector('#t-restante').textContent = 'Tiempo: ' + counter + ' segundos';
-   }, 1000);
 }

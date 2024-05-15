@@ -87,7 +87,7 @@ h1 {
  
  .card .back {
     border: 3px solid #05d1fe;
-    background: url(images/back.png) center / contain no-repeat;
+    background-color:black;
 }
 
 .estadisticas {
