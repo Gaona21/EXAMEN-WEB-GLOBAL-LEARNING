@@ -1,4 +1,5 @@
 const totalCards = 16;
+const cardImages = ['../img/fila-1-columna-3.png', '../img/fila-1-columna-4.png', '../img/fila-1-columna-5.png', '../img/fila-1-columna-6.png', '../img/fila-1-columna-7.png', '../img/fila-1-columna-8.png', '../img/fila-1-columna-9.png', '../img/fila-1-columna-10.png', '../img/fila-1-columna-11.png', '../img/fila-1-columna-12.png', '../img/fila-2-columna-1.png', '../img/fila-2-columna-2.png', '../img/fila-2-columna-3.png', '../img/fila-2-columna-4.png', '../img/fila-2-columna-5.png', '../img/fila-2-columna-6.png', '../img/fila-2-columna-7.png', '../img/fila-2-columna-8.png', '../img/fila-2-columna-9.png', '../img/fila-2-columna-10.png', '../img/fila-2-columna-11.png', '../img/fila-2-columna-12.png', '../img/fila-3-columna-1.png', '../img/fila-3-columna-3.png', '../img/fila-3-columna-4.png', '../img/fila-3-columna-5.png', '../img/fila-3-columna-6.png', '../img/fila-3-columna-7.png', '../mg/fila-3-columna-8.png', '../img/fila-3-columna-9.png', '../img/fila-3-columna-10.png', '../img/fila-3-columna-11.png', '../img/fila-3-columna-12.png', '../img/fila-4-columna-1.png', '../img/fila-4-columna-2.png', '../img/fila-4-columna-3.png', '../img/fila-4-columna-4.png', '../img/fila-4-columna-5.png', '../img/fila-4-columna-6.png', '../img/fila-4-columna-7.png', '../img/fila-4-columna-8.png', '../img/fila-4-columna-9.png', '../img/fila-4-columna-10.png', '../img/fila-4-columna-11.png', '../img/fila-4-columna-12.png', '../img/fila-1-columna-1.png', '../img/fila-1-columna-2.png'];
 let cards = [];
 let selectedCards = [];
 let valuesUsed = [];
@@ -6,8 +7,10 @@ let counter = 0;
 let currentMove = 0;
 let currentAttempts = 0;
 let timer;
+const timeLimit = 120;
 
 let cardTemplate = '<div class="card"><div class="back"></div><div class="face"></div></div>';
+
 
 function activate(e) {
    if (currentMove < 2) {
@@ -19,9 +22,9 @@ function activate(e) {
          if (++currentMove == 2) {
 
             currentAttempts++;
-            document.querySelector('#stats').innerHTML = currentAttempts + 'intentos';
+            document.querySelector('#stats').innerHTML = 'Movimientos: ' + currentAttempts;
 
-            if (selectedCards[0].querySelectorAll('.face')[0].innerHTML == selectedCards[1].querySelectorAll('.face')[0].innerHTML) {
+            if (selectedCards[0].querySelector('.face img').src === selectedCards[1].querySelector('.face img').src) {
                selectedCards = [];
                currentMove = 0;
 
@@ -49,14 +52,10 @@ function activate(e) {
    }
 }
 
-function randomValue() {
-   let random = Math.floor(Math.random() * totalCards * 0.5);
-   let values = valuesUsed.filter(value => value === random);
-   if (values.length < 2) {
-      valuesUsed.push(random);
-   }
-   else {
-      randomValue();
+function shuffle(array) {
+   for (let i = array.length - 1; i > 0; i--) {
+       const j = Math.floor(Math.random() * (i + 1));
+       [array[i], array[j]] = [array[j], array[i]];
    }
 }
 
@@ -85,13 +84,19 @@ function loadGameStats() {
 
 loadGameStats();
 
+let images = [...cardImages, ...cardImages];
+shuffle(images);
 
-for (let i=0; i < totalCards; i++) {
-   let div = document.createElement('div');
-   div.innerHTML = cardTemplate;
-   cards.push(div);
-   document.querySelector('#game').append(cards[i]);
-   randomValue();
-   cards[i].querySelectorAll('.face')[0].innerHTML = valuesUsed[i];
-   cards[i].querySelectorAll('.card')[0].addEventListener('click', activate);
+for (let i = 0; i < totalCards; i++) {
+    let div = document.createElement('div');
+    div.innerHTML = cardTemplate;
+    cards.push(div);
+    document.querySelector('#game').append(cards[i]);
+
+    let img = document.createElement('img');
+    img.src = images[i];
+    cards[i].querySelector('.face').appendChild(img);
+
+    cards[i].querySelector('.card').addEventListener('click', activate);
 }
+

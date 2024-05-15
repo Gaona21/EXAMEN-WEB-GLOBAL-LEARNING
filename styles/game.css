@@ -86,8 +86,11 @@ h1 {
 }
  
  .card .back {
-    border: 3px solid #05d1fe;
-    background-color:black;
+    border: 2px solid #041114;
+    background-image:url('../img/fila-5-columna-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .estadisticas {
@@ -102,3 +105,9 @@ footer {
     text-align: center;
 }
 
+.face img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+    /* otros estilos personalizados */
+  }
