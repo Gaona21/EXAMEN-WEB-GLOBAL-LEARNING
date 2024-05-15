@@ -1,0 +1,139 @@
+.capa-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.contenedor-menu-sonido{
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+/* .cabecera-menu-sonido{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+} */
+
+.titulo-menu-sonido{
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.titulo-subMenu-sonido{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-salir{
+    width: 10%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-salir:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+    color: red;
+}
+
+.menu-sonido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cont-sonido-general{
+    width: 15%;
+}
+
+.cont-sonido-general img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.cont-efecto-sonido{
+    width: 15%;
+}
+
+.cont-efecto-sonido img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.cont-efecto-sonido input[type="checkbox"], .cont-sonido-general input[type="checkbox"]{
+    visibility: hidden;
+}
+
+.cont-volumen{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.cont-volumen label{
+    width: 15%;
+}
+
+.cont-volumen img{ 
+    width: 100%;
+}
+
+.cont-volumen input[type="range"]{
+    width: 80%;
+    cursor: pointer;
+}
+
+.transicion-desactivar{
+    animation: transicion_desactivar 1s ease forwards;
+}
+
+.transicion-activar{
+    animation: transicion_activar 1s ease forwards;
+}
+
+@keyframes transicion_desactivar{
+    0%{
+        filter: grayscale(0%);
+    }
+    
+    100%{
+        filter: grayscale(100%);
+    }
+}
+
+@keyframes activar{
+    0%{
+        filter: grayscale(100%);
+    }
+    
+    100%{
+        filter: grayscale(0%);
+    }
+}
