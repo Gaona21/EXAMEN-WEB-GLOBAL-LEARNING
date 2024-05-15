@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/opciones.css">
 
-    <title>Nombre del Juego</title>
+    <title>Memo Cards</title>
 </head>
 
-  <body>
+<body>
     <main>
         <div class="main-contenedor">
 
-            <h1 class="titulo-menu">Nombre del Juego</h1>
+            <h1 class="titulo-menu">Memo Cards</h1>
 
             <div class="menu-contenedor">
                 <ul class="lista-menu">
@@ -29,12 +31,14 @@
                                 alt="Instrucciones de juego" title="Instrucciones de juego"></a></li>
                     <li class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Copa.png" alt="Historial"
                                 title="Historial"></a></li>
-                    <li class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Configuracion.png" alt="Opciones"
+                    <li id="btn-opciones" class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Configuracion.png" alt="Opciones"
                                 title="Opciones"></a></li>
                 </ul>
             </div>
         </div>
     </main>
+
+    <script src="./scripts/opcionesSonido.js"></script>
 </body>
 
 </html>

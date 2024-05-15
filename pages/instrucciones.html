@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/opciones.css">
 
     <title>Instrucciones de juego</title>
-  </head>
-  <body>
+</head>
+<body>
     <main>
-      <div class="contenedor-carousel">
-        <!-- <div class="cont-icono-atras">
+        <div class="contenedor-carousel">
+            <!-- <div class="cont-icono-atras">
                 <a href="../index.html">
                     <img src="../assets/img/icon/volver atras.png" alt="icono volver atras" title="Atras">
                 </a>
             </div> -->
 
-        <div class="btn-izquierda"></div>
+            <div class="btn-izquierda"></div>
 
-        <div class="carousel">
-          <div class="carousel-img activo">
-            <div class="titulo-carousel">El juego se juega asi</div>
-            <div class="contenedo-img">
-              <img src="" alt="Instrucciones del juego" />
-              1
+            <div class="carousel">
+                <div class="carousel-img activo">
+                    <div class="titulo-carousel">El juego se juega asi</div>
+                    <div class="contenedo-img">
+                        <img src="" alt="Instrucciones del juego">
+                        1
+                    </div>
+                </div>
+
+                <div class="carousel-img">
+                    <div class="titulo-carousel">Los puntos se ven asi</div>
+                    <div class="contenedo-img">
+                        <img src="" alt="Instrucciones del juego">
+                        2
+                    </div>
+                </div>
+
+                <div class="carousel-img">
+                    <div class="titulo-carousel">Gasnaste no se que</div>
+                    <div class="contenedo-img">
+                        <img src="" alt="Instrucciones del juego">
+                        3
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="carousel-img">
-            <div class="titulo-carousel">Los puntos se ven asi</div>
-            <div class="contenedo-img">
-              <img src="" alt="Instrucciones del juego" />
-              2
-            </div>
-          </div>
-
-          <div class="carousel-img">
-            <div class="titulo-carousel">Gasnaste no se que</div>
-            <div class="contenedo-img">
-              <img src="" alt="Instrucciones del juego" />
-              3
-            </div>
-          </div>
-        </div>
-
-        <div class="btn-derecha"></div>
+            <div class="btn-derecha"></div>
 
             <div class="subMenu-contenedor">
                 <ul class="lista-subMenu">
@@ -53,7 +54,7 @@
                                 alt="Instrucciones de juego" title="Inicio"></a></li>
                     <li class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Copa.png" alt="Historial"
                                 title="Historial"></a></li>
-                    <li class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Configuracion.png" alt="Opciones"
+                    <li id="btn-opciones" class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Configuracion.png" alt="Opciones"
                                 title="Opciones"></a></li>
                 </ul>
             </div>
@@ -61,5 +62,6 @@
     </main>
 
     <script src="../scripts/carousel.js"></script>
+    <script src="../scripts/opcionesSonido.js"></script>
 </body>
 </html>
