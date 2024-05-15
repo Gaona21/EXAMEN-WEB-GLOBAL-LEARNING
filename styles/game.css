@@ -1,7 +1,10 @@
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
-    background: white;
+    background: rgb(255, 255, 255);
     overflow: hidden;
     font-family: "Buda", serif;
 }
@@ -14,14 +17,16 @@ body {
   
 
 .container {
+    background-color: #00b31e;
     align-items: center;
     justify-content: center;
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    margin: 5px;
 }
 
 .section1 {
-    height: 100vh;
+    width: auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -29,24 +34,28 @@ body {
     justify-content: space-evenly;
 }
 
+.section2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
  h2 {
-color: black;
-font-size: 2rem;
+color: rgb(197, 194, 4);
+font-size: 1.5rem;
 }
 
 h1 {
-    color: black;
+    color: rgb(197, 194, 4);
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 
 #game {
-    height: 100vh;
-    max-height: 700px;
     display: flex;
-     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
     flex-wrap: wrap; 
     align-items: center;
     justify-content: center; 
@@ -67,9 +76,9 @@ h1 {
  }
  
  .card div {
-    width: 100%;
+    width: 94%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,8 +103,8 @@ h1 {
 }
 
 .estadisticas {
+    background-color: rgb(255, 255, 255);
     border:1px solid black;
-    height: 8rem;
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
@@ -109,5 +118,68 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 2%;
-    /* otros estilos personalizados */
+  }
+
+  #last-game-stats {
+    font-size: 1rem;
+  }
+
+  /* Media Query a partir de aqui*/
+  
+  @media (min-width: 1200px) {
+    .card {
+        width: 140px;
+        height: 195px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        max-width: 80%;
+    }
+    #last-game-stats {
+        font-size: 2rem;
+      }
+    
+}
+
+
+
+@media (min-width: 1024px) {
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        max-width: 90%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+  .card {
+      width: 60px;
+      height: 80px;
+  }
+  #game {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 50px;
+        height: 70px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
   }
