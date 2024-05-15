@@ -1,14 +1,18 @@
+
 body {
     margin: 0;
     background: white;
     overflow: hidden;
+    font-family: "Buda", serif;
 }
 
-main {
-    justify-content: center;
-    
-   margin: 4rem;
-}
+.buda-light {
+    font-family: "Buda", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+
 .container {
     align-items: center;
     justify-content: center;
@@ -16,6 +20,14 @@ main {
     gap: 1rem;
 }
 
+.section1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
  h2 {
 color: black;
@@ -30,26 +42,31 @@ h1 {
 
 
 #game {
+    height: 100vh;
+    max-height: 700px;
+    display: flex;
      display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;   
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center; 
 }
 
+
 .card {
-    width: 10rem;
-    height: 10rem;
-    margin: 0.5rem;
+    width: 100px;
+    height: 140px;
+    margin: 1rem;
     position: relative;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-    cursor: pointer;
-}
-
-.card .active {
-    transform: rotateY('180deg');
-}
-
-
-.card div {
+ }
+ 
+ .card.active {
+    transform: rotateY(180deg);
+ }
+ 
+ .card div {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
@@ -60,16 +77,17 @@ h1 {
     backface-visibility: hidden;
     pointer-events: none;
 }
-
-.card .face {
+ 
+ .card .face {
     background: rgb(105, 6, 6);
-    transform: rotateY( '180deg' );
+    transform: rotateY( 180deg );
     color: gray;
     font-size: 6rem;
 }
-
-.card .back {
-    border: 2px solid black;
+ 
+ .card .back {
+    border: 3px solid #05d1fe;
+    background: url(images/back.png) center / contain no-repeat;
 }
 
 .estadisticas {
@@ -83,3 +101,4 @@ h1 {
 footer {
     text-align: center;
 }
+

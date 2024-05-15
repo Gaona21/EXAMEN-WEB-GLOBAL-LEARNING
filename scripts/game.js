@@ -1,12 +1,13 @@
 const totalCards = 16;
-const availableCards = ['A', 'K', 'Q', 'J'];
 let cards = [];
 let selectedCards = [];
 let valuesUsed = [];
+let counter = 0;
 let currentMove = 0;
 let currentAttempts = 0;
 
 let cardTemplate = '<div class="card"><div class="back"></div><div class="face"></div></div>';
+
 
 function activate(e) {
    if (currentMove < 2) {
@@ -23,6 +24,10 @@ function activate(e) {
             if (selectedCards[0].querySelectorAll('.face')[0].innerHTML == selectedCards[1].querySelectorAll('.face')[0].innerHTML) {
                selectedCards = [];
                currentMove = 0;
+
+               if (selectedCards.length === totalCards) {
+                  clearInterval(timer);
+               }
             }
             
             else {
@@ -34,28 +39,26 @@ function activate(e) {
                }, 600);
             }
          }
+         if (counter === 0) {
+            startCounter();
+            document.querySelector('#t-restante').textContent = 'Tiempo: ' + counter+ 'segundos';
+         }
       }
    }
 }
 
 function randomValue() {
-   let rnd = Math.floor(Math.random() * totalCards * 0.5);
-   let values = valuesUsed.filter(value => value === rnd);
+   let random = Math.floor(Math.random() * totalCards * 0.5);
+   let values = valuesUsed.filter(value => value === random);
    if (values.length < 2) {
-      valuesUsed.push(rnd);
+      valuesUsed.push(random);
    }
    else {
       randomValue();
    }
 }
 
-function getFaceValue(value) {
-   let rtn = value;
-   if (value < availableCards.length) {
-      rtn = availableCards[value];
-   }
-   return rtn;
-}
+
 
 for (let i=0; i < totalCards; i++) {
    let div = document.createElement('div');
@@ -63,6 +66,13 @@ for (let i=0; i < totalCards; i++) {
    cards.push(div);
    document.querySelector('#game').append(cards[i]);
    randomValue();
-   cards[i].querySelectorAll('.face')[0].innerHTML = getFaceValue(valuesUsed[i]);
+   cards[i].querySelectorAll('.face')[0].innerHTML = valuesUsed[i];
    cards[i].querySelectorAll('.card')[0].addEventListener('click', activate);
+}
+
+function startCounter() {
+   timer = setInterval(() => {
+       counter++;
+       document.querySelector('#t-restante').textContent = 'Tiempo: ' + counter + ' segundos';
+   }, 1000);
 }
