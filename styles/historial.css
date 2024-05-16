@@ -31,6 +31,7 @@
 .titulo-historial{
     width: 90%;
     margin-bottom: 20px;
+    color: black;
 }
 
 .btn-salir{
@@ -41,6 +42,7 @@
     transition: all 0.2s ease;
     margin-bottom: 20px;
     text-align: center;
+    color: black;
 }
 
 .btn-salir:hover{
@@ -58,8 +60,10 @@
     margin: 5px 0;
     border-bottom: 1px solid;
     text-align: center;
+    color: black;
 }
 
 .historial p{
     text-align: center;
+    color: black;
 }

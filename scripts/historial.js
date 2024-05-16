@@ -23,30 +23,23 @@ btn_historial.addEventListener("click", () => {
         divMenuSonido.remove();
     });
 
-    // Llamada a la función para mostrar las partidas
     mostrarPartidas();
 });
 
 function saveGameStats(moves, time) {
-
-    // Crear objeto de estadística de partida
     let gameStats = {
         moves: moves,
         time: time,
     };
 
-    // Obtener las partidas guardadas en localStorage
     let partidas = JSON.parse(localStorage.getItem('partidas')) || [];
 
-    // Añadir la nueva partida
     partidas.push(gameStats);
 
-    // Si hay más de 6 partidas, eliminar la más antigua
     if (partidas.length > 6) {
         partidas.shift();
     }
 
-    // Guardar el array actualizado en localStorage
     localStorage.setItem('partidas', JSON.stringify(partidas));
 }
 

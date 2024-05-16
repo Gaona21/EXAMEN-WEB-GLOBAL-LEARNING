@@ -60,6 +60,8 @@ btn_menu_opciones.addEventListener("click", () => {
 
     btn_salir.addEventListener("click", () => {
         divMenuSonido.remove();
+        audioFondo.pause()
+        audioFondo.currentTime = 0;
     });
 
     audioFondo.play();
@@ -91,13 +93,18 @@ btn_menu_opciones.addEventListener("click", () => {
 
         if(!checkbox_general.checked){
             img_sonido_general.style.filter = "grayscale(100%)";
-            input_volumen.value = 0;
+            // input_volumen.value = 0;
+            
+            audioFondo.pause();
+            audioFondo.currentTime = 0;
         }else{
             img_sonido_general.style.filter = "grayscale(0%)";
+            
+            audioFondo.play();
         }
 
         localStorage.setItem("sonidoGeneral", checkbox_general.checked);
-        localStorage.setItem("volumen", input_volumen.value);
+        // localStorage.setItem("volumen", input_volumen.value);
     });
 
     checkbox_efecto.addEventListener("change", () => {
@@ -114,13 +121,23 @@ btn_menu_opciones.addEventListener("click", () => {
     });
 
     input_volumen.addEventListener("input", () => {
+        const volumen = parseFloat(input_volumen.value);
         console.log(input_volumen.value)
+
         const img_sonido_general = document.querySelector("#sonido-general");
         const img_sonido_volumen = document.querySelector("#sonido-volumen");
 
-        if(input_volumen.value != 0 && !checkbox_general.checked){
+        audioFondo.volume = volumen / 100;
+
+        // if(input_volumen.value != 0 && !checkbox_general.checked){
+        //     img_sonido_general.style.filter = "grayscale(0%)";
+        //     checkbox_general.checked = true;
+        // }
+
+        if (volumen > 0 && !checkbox_general.checked) {
             img_sonido_general.style.filter = "grayscale(0%)";
             checkbox_general.checked = true;
+            audioFondo.play();
         }
 
         localStorage.setItem("volumen", input_volumen.value);
@@ -130,13 +147,13 @@ btn_menu_opciones.addEventListener("click", () => {
 
 
 //algo
-
 function configurarAudio(audioElement) {
     const audioMuted = JSON.parse(localStorage.getItem('audioMuted'));
     const audioVolume = JSON.parse(localStorage.getItem('audioVolume'));
 
     if (audioMuted !== null) {
-        audioElement.muted = audioMuted;
+        audioElement.pause();
+        audioElement.currentTime = 0;
     }
 
     if (audioVolume !== null) {
