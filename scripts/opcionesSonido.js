@@ -17,8 +17,6 @@ musicaDeFondo = `${baseUrl}${musicaDeFondo}`;
 
 const audioFondo = new Audio(musicaDeFondo);
 audioFondo.loop = true;
-audioFondo.play();
-
 // lo de arriba me ayudo chatgpt xd
 
 const menuSonido = `
@@ -163,8 +161,8 @@ function configurarAudio(audioElement) {
 
 configurarAudio(audioFondo);
 
-if (!audioFondo.muted) {
-    audioFondo.play().catch(error => {
-        console.error('Error al intentar reproducir el audio:', error);
-    });
-}
+// if (!audioFondo.muted) {
+//     audioFondo.play().catch(error => {
+//         console.error('Error al intentar reproducir el audio:', error);
+//     });
+// }

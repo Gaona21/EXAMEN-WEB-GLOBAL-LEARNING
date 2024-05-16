@@ -33,8 +33,6 @@
 
 .titulo-menu {
     font-size: 4em;
-    /* margin-bottom: 24px; */
-    margin-bottom: 5%;
 }
 
 .menu-opcion a {
@@ -43,8 +41,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 
     font-size: 1.5em;
+    font-weight: bold;
     border: 1px solid #ccc;
     border-radius: 50px;
     transition: all 0.3s ease;
