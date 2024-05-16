@@ -127,3 +127,27 @@ btn_menu_opciones.addEventListener("click", () => {
         localStorage.setItem("sonidoGeneral", checkbox_general.checked);
     });
 });
+
+
+//algo
+
+function configurarAudio(audioElement) {
+    const audioMuted = JSON.parse(localStorage.getItem('audioMuted'));
+    const audioVolume = JSON.parse(localStorage.getItem('audioVolume'));
+
+    if (audioMuted !== null) {
+        audioElement.muted = audioMuted;
+    }
+
+    if (audioVolume !== null) {
+        audioElement.volume = audioVolume / 100;
+    }
+}
+
+configurarAudio(audioFondo);
+
+if (!audioFondo.muted) {
+    audioFondo.play().catch(error => {
+        console.error('Error al intentar reproducir el audio:', error);
+    });
+}

@@ -1,0 +1,65 @@
+.capa-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.contenedor-historial{
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.titulo-historial{
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.btn-salir{
+    width: 10%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-salir:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+    color: red;
+}
+
+.historial{
+    width: 90%;
+    padding: 5px;
+}
+
+.filas{
+    margin: 5px 0;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+.historial p{
+    text-align: center;
+}
