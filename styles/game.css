@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: "Buda", serif;
+}
+
+.buda-light {
+    font-family: "Buda", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+
+.container {
+    background-color: #00b31e;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.section1 {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+ h2 {
+color: rgb(197, 194, 4);
+font-size: 1.5rem;
+}
+
+h1 {
+    color: rgb(197, 194, 4);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+
+#game {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center; 
+}
+
+
+.card {
+    width: 100px;
+    height: 140px;
+    margin: 1rem;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+ }
+ 
+ .card.active {
+    transform: rotateY(180deg);
+ }
+ 
+ .card div {
+    width: 94%;
+    height: 100%;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+ 
+ .card .face {
+    background: rgb(105, 6, 6);
+    transform: rotateY( 180deg );
+    color: gray;
+    font-size: 6rem;
+}
+ 
+ .card .back {
+    border: 2px solid #041114;
+    background-image:url('../img/fila-5-columna-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.estadisticas {
+    background-color: rgb(255, 255, 255);
+    border:1px solid black;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+}
+
+.face img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+  }
+
+  #last-game-stats {
+    font-size: 1rem;
+  }
+
+  /* Media Query a partir de aqui*/
+  
+  @media (min-width: 1200px) {
+    .card {
+        width: 140px;
+        height: 195px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        max-width: 80%;
+    }
+    #last-game-stats {
+        font-size: 2rem;
+      }
+    
+}
+
+
+
+@media (min-width: 1024px) {
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        max-width: 90%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+  .card {
+      width: 60px;
+      height: 80px;
+  }
+  #game {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 50px;
+        height: 70px;
+    }
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+  }
