@@ -62,14 +62,11 @@ btn_menu_opciones.addEventListener("click", () => {
         audioFondo.currentTime = 0;
     });
 
-    audioFondo.play();
-
     const checkbox_general = document.querySelector("#general");
     const checkbox_efecto = document.querySelector("#efecto");
     const input_volumen = document.querySelector("#volumen");
 
     if (localStorage.getItem("sonidoGeneral") !== null) {
-        console.log(JSON.parse(localStorage.getItem("sonidoGeneral")))
         checkbox_general.checked = JSON.parse(localStorage.getItem("sonidoGeneral"));
     }
     if (localStorage.getItem("efectoSonido") !== null) {
@@ -77,6 +74,10 @@ btn_menu_opciones.addEventListener("click", () => {
     }
     if (localStorage.getItem("volumen") !== null) {
         input_volumen.value = localStorage.getItem("volumen");
+    }
+
+    if(checkbox_general.checked){
+        audioFondo.play()
     }
 
     const img_sonido_general = document.querySelector("#sonido-general");
@@ -142,27 +143,3 @@ btn_menu_opciones.addEventListener("click", () => {
         localStorage.setItem("sonidoGeneral", checkbox_general.checked);
     });
 });
-
-
-//algo
-function configurarAudio(audioElement) {
-    const audioMuted = JSON.parse(localStorage.getItem('audioMuted'));
-    const audioVolume = JSON.parse(localStorage.getItem('audioVolume'));
-
-    if (audioMuted !== null) {
-        audioElement.pause();
-        audioElement.currentTime = 0;
-    }
-
-    if (audioVolume !== null) {
-        audioElement.volume = audioVolume / 100;
-    }
-}
-
-configurarAudio(audioFondo);
-
-// if (!audioFondo.muted) {
-//     audioFondo.play().catch(error => {
-//         console.error('Error al intentar reproducir el audio:', error);
-//     });
-// }

@@ -53,13 +53,13 @@ function mostrarPartidas() {
             if (a.moves !== b.moves) {
                 return a.moves - b.moves;
             } else {
-                return a.time.localeCompare(b.time);
+                return a.time - b.time; // Comparar los tiempos como números
             }
         });
 
         let html = '<ul>';
         partidasOrdenadas.forEach(partida => {
-            html += `<li class="filas">Movimientos: ${partida.moves},  Tiempo: ${partida.time}</li>`;
+            html += `<li class="filas">Movimientos: ${partida.moves},  Tiempo: ${partida.time} Seg.</li>`;
         });
         html += '</ul>';
         historialDiv.innerHTML = html;
