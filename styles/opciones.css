@@ -39,12 +39,14 @@
 .titulo-menu-sonido{
     width: 90%;
     margin-bottom: 20px;
+    color: black;
 }
 
 .titulo-subMenu-sonido{
     width: 90%;
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 .btn-salir{
@@ -55,6 +57,7 @@
     transition: all 0.2s ease;
     margin-bottom: 20px;
     text-align: center;
+    color: black;
 }
 
 .btn-salir:hover{

@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/opciones.css">
+    <link rel="stylesheet" href="./styles/historial.css">
 
     <title>Memo Cards</title>
 </head>
@@ -19,17 +20,23 @@
 
             <div class="menu-contenedor">
                 <ul class="lista-menu">
-                    <li class="menu-opcion"><a href="#">Jugar</a></li>
+                    <li class="menu-opcion"><a href="./pages/game.html">Jugar</a></li>
                     <!-- <li class="menu-opcion"><a href="#">Creditos</a></li> -->
                     <li class="menu-opcion"><a href="#">Salir</a></li>
                 </ul>
             </div>
 
             <div class="subMenu-contenedor">
+                <div class="hamburguesa">
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                </div>
+                
                 <ul class="lista-subMenu">
                     <li class="subMenu-opcion"><a href="./pages/instrucciones.html"><img src="./assets/img/icon/libro.png"
                                 alt="Instrucciones de juego" title="Instrucciones de juego"></a></li>
-                    <li class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Copa.png" alt="Historial"
+                    <li id="btn-historial" class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Copa.png" alt="Historial"
                                 title="Historial"></a></li>
                     <li id="btn-opciones" class="subMenu-opcion"><a href="#"><img src="./assets/img/icon/Configuracion.png" alt="Opciones"
                                 title="Opciones"></a></li>
@@ -38,7 +45,9 @@
         </div>
     </main>
 
+    <script src="./scripts/menuHamburguesa.js"></script>
     <script src="./scripts/opcionesSonido.js"></script>
+    <script src="./scripts/historial.js"></script>
 </body>
 
 </html>

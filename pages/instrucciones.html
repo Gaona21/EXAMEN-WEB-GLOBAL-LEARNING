@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/opciones.css">
+    <link rel="stylesheet" href="../styles/historial.css">
 
     <title>Instrucciones de juego</title>
 </head>
@@ -22,7 +23,6 @@
 
             <div class="carousel">
                 <div class="carousel-img activo">
-                    <div class="titulo-carousel">El juego se juega asi</div>
                     <div class="contenedo-img">
                         <img src="" alt="Instrucciones del juego">
                         1
@@ -30,7 +30,6 @@
                 </div>
 
                 <div class="carousel-img">
-                    <div class="titulo-carousel">Los puntos se ven asi</div>
                     <div class="contenedo-img">
                         <img src="" alt="Instrucciones del juego">
                         2
@@ -38,7 +37,6 @@
                 </div>
 
                 <div class="carousel-img">
-                    <div class="titulo-carousel">Gasnaste no se que</div>
                     <div class="contenedo-img">
                         <img src="" alt="Instrucciones del juego">
                         3
@@ -49,10 +47,16 @@
             <div class="btn-derecha"></div>
 
             <div class="subMenu-contenedor">
+                <div class="hamburguesa">
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                </div>
+
                 <ul class="lista-subMenu">
                     <li class="subMenu-opcion"><a href="../index.html"><img src="../assets/img/icon/inicio casa.png"
                                 alt="Instrucciones de juego" title="Inicio"></a></li>
-                    <li class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Copa.png" alt="Historial"
+                    <li id="btn-historial" class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Copa.png" alt="Historial"
                                 title="Historial"></a></li>
                     <li id="btn-opciones" class="subMenu-opcion"><a href="#"><img src="../assets/img/icon/Configuracion.png" alt="Opciones"
                                 title="Opciones"></a></li>
@@ -61,7 +65,9 @@
         </div>
     </main>
 
+    <script src="../scripts/menuHamburguesa.js"></script>
     <script src="../scripts/carousel.js"></script>
     <script src="../scripts/opcionesSonido.js"></script>
+    <script src="../scripts/historial.js"></script>
 </body>
 </html>

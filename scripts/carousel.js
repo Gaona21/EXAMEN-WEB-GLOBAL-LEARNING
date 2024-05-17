@@ -28,7 +28,7 @@ btnDerecha.addEventListener("click", () => {
                 listaCarousel[contador].classList.toggle("entrada");
             }, 100);
         }, 100);
-    }, 500);
+    }, 300);
 });
 
 btnIzquierda.addEventListener("click", () => {
@@ -53,5 +53,5 @@ btnIzquierda.addEventListener("click", () => {
                 listaCarousel[contador].classList.toggle("entrada");
             }, 100);
         }, 100);
-    }, 500);
+    }, 300);
 });

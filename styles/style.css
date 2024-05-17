@@ -4,7 +4,8 @@
     box-sizing: border-box;
     text-decoration: none;
     color: black;
-    font-family: Arial, sans-serif;
+    color: white;
+    font-family: "Buda", serif;
     list-style: none;
 }
 
@@ -16,6 +17,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
+    background-image: url("../img/—Slidesdocs—mesa de madera antigua sobre_9976643b15.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .menu-contenedor {
@@ -28,8 +33,6 @@
 
 .titulo-menu {
     font-size: 4em;
-    /* margin-bottom: 24px; */
-    margin-bottom: 5%;
 }
 
 .menu-opcion a {
@@ -38,8 +41,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 
     font-size: 1.5em;
+    font-weight: bold;
     border: 1px solid #ccc;
     border-radius: 50px;
     transition: all 0.3s ease;
@@ -47,11 +52,10 @@
 
 .menu-opcion a:hover {
     margin: 20px 0 20px 0;
-    background-color: #c0c0c0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transform: scale(1.2);
     transition: all 0.3s ease;
-    animation: titilar  0.5s infinite forwards;
+    animation: titilar 0.5s infinite forwards;
 }
 
 .subMenu-contenedor {
@@ -71,7 +75,7 @@
     margin: 12px 0 12px 0;
     transform: scale(1.2);
     transition: all 0.3s ease;
-    animation: titilar  0.5s infinite forwards;
+    animation: titilar 0.5s infinite forwards;
 }
 
 /* Instrucciones.html */
@@ -84,27 +88,31 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+
+    background-image: url("../img/—Slidesdocs—mesa de madera antigua sobre_9976643b15.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.cont-icono-atras{
+.cont-icono-atras {
     width: 30px;
     position: absolute;
     top: 2%;
     left: 1%;
 }
 
-.cont-icono-atras:hover{
-    animation: titilar  0.5s infinite forwards;
+.cont-icono-atras:hover {
+    animation: titilar 0.5s infinite forwards;
 }
 
-.cont-icono-atras img{
+.cont-icono-atras img {
     width: 100%;
 }
 
 .btn-izquierda {
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-right: 25px solid #ccc;
+    border-right: 25px solid white;
     margin: 0px 20px 0 20px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -113,7 +121,7 @@
 .btn-derecha {
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-left: 25px solid #ccc;
+    border-left: 25px solid white;
     margin: 0px 20px 0 20px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -128,9 +136,10 @@
 
 .carousel {
     width: 70%;
-    height: 500px;
+    /* height: 500px; */
+    height: 70%;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid white;
     user-select: none;
 }
 
@@ -145,8 +154,7 @@
 .titulo-carousel {
     display: inline;
     padding: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
+    border: 1px solid white;
     font-size: 24px;
     position: absolute;
     top: -10%;
@@ -169,16 +177,16 @@
     animation: entrada 0.5s ease forwards;
 }
 
-@keyframes titilar{
-    0%{
+@keyframes titilar {
+    0% {
         transform: scale(1);
     }
 
-    50%{
+    50% {
         transform: scale(1.2);
     }
 
-    100%{
+    100% {
         transform: scale(1);
     }
 }
@@ -217,7 +225,73 @@
     }
 }
 
-@media (max-width: 375px){
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .barra {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: white;
+        margin: 3px;
+        transition: transform 0.3s ease;
+    }
+
+    .barra.cruz1 {
+        width: 40px;
+        height: 5px;
+        border-radius: 0%;
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .barra.cruz2 {
+        opacity: 0;
+    }
+
+    .barra.cruz3 {
+        width: 40px;
+        height: 5px;
+        border-radius: 0%;
+        transform: rotate(-45deg) translate(11px, -12px);
+    }
+
+    .lista-subMenu {
+        display: none;
+    }
+
+    .lista-subMenu.active {
+        display: block;
+    }
+}
+
+@media (max-width: 425px) {
+    /* .titulo-menu {
+        font-size: 3em;
+    }
+
+    .subMenu-contenedor {
+        width: 40px;
+    }
+
+    .titulo-carousel {
+        font-size: 1em;
+        top: -8%;
+    } */
+
+    .carousel {
+        /* height: 350px; */
+        /* height: 50%; */
+    }
+}
+
+@media (max-width: 375px) {
     .titulo-menu {
         font-size: 3em;
     }
@@ -232,9 +306,9 @@
     }
 }
 
-@media (max-height: 425px){
+@media (max-height: 425px) {
     .carousel {
-        height: 350px;
+        /* height: 350px; */
     }
 
     .subMenu-contenedor {
@@ -242,9 +316,9 @@
     }
 }
 
-@media (max-height: 375px){
+@media (max-height: 375px) {
     .carousel {
-        height: 250px;
+        /* height: 250px; */
     }
 
     .titulo-carousel {

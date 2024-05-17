@@ -1,28 +1,47 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: rgb(255, 255, 255);
-    overflow: hidden;
+    background-image: url(../img/wooden-wall-scratched-material-background-texture-concept.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* overflow: hidden; */
     font-family: "Buda", serif;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-main {
+    width: 90%;
+    max-height: 100vh;
+    border: 1px solid #ccc;
 }
 
 .buda-light {
     font-family: "Buda", serif;
     font-weight: 300;
     font-style: normal;
-  }
-  
+}
+
 
 .container {
-    background-color: #00b31e;
+    width: 90%;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin: auto;
 }
 
 .section1 {
@@ -32,6 +51,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    margin: 5px;
 }
 
 .section2 {
@@ -40,42 +60,46 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5%;
+    margin: 5px;
 }
 
- h2 {
-color: rgb(197, 194, 4);
-font-size: 1.5rem;
+h2 {
+    color: rgb(197, 194, 4);
+    font-size: 1.5rem;
 }
 
 h1 {
-    color: rgb(197, 194, 4);
+    color: beige;
     text-align: center;
     font-size: 2.5rem;
+    margin: 5px;
 }
 
 
 #game {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    border-radius: 2%;
 }
 
 
 .card {
     width: 100px;
     height: 140px;
-    margin: 1rem;
+    margin: .5rem;
     position: relative;
     transition: transform 0.5s;
     transform-style: preserve-3d;
- }
- 
- .card.active {
+    cursor: pointer;
+}
+
+.card.active {
     transform: rotateY(180deg);
- }
- 
- .card div {
+}
+
+.card div {
     width: 94%;
     height: 100%;
     border-radius: 5%;
@@ -85,18 +109,19 @@ h1 {
     position: absolute;
     backface-visibility: hidden;
     pointer-events: none;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.568);
 }
- 
- .card .face {
+
+.card .face {
     background: rgb(105, 6, 6);
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
     color: gray;
     font-size: 6rem;
 }
- 
- .card .back {
+
+.card .back {
     border: 2px solid #041114;
-    background-image:url('../img/fila-5-columna-2.png');
+    background-image: url('../img/fila-5-columna-2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -104,13 +129,21 @@ h1 {
 
 .estadisticas {
     background-color: rgb(255, 255, 255);
-    border:1px solid black;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.568);
+    border: 1px solid black;
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
 }
 
 footer {
+    height: 15%;
+    position: fixed;
+    /* o position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -118,68 +151,155 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 2%;
-  }
+}
 
-  #last-game-stats {
+#last-game-stats {
     font-size: 1rem;
-  }
+    color: beige;
+}
 
-  /* Media Query a partir de aqui*/
-  
-  @media (min-width: 1200px) {
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.overlay-content h2 {
+    margin-bottom: 20px;
+}
+
+.overlay-content button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#start-game-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#back-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+
+/* Media Query a partir de aqui*/
+
+@media (min-width: 1200px) {
     .card {
-        width: 140px;
-        height: 195px;
+        /* width: 140px;
+        height: 195px; */
     }
+
     #game {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        max-width: 80%;
+        /* max-width: 80%; */
     }
+
     #last-game-stats {
         font-size: 2rem;
-      }
-    
+    }
+
 }
 
 
 
-@media (min-width: 1024px) {
-    
+@media (min-width: 1024px) and (max-width: 1200px) {
+
     .card {
-        width: 100px;
-        height: 140px;
+        width: 70px;
+        height: 110px;
     }
+
     #game {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        max-width: 90%;
+        /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+        /* max-width: 90%; */
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
-    
+
     .card {
-        width: 100px;
-        height: 140px;
+        width: 80px;
+        height: 120px;
     }
+
     #game {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 }
-@media (max-width: 600px) {
-  .card {
-      width: 60px;
-      height: 80px;
-  }
-  #game {
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
-}
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .card {
-        width: 50px;
-        height: 70px;
+        width: 60px;
+        height: 80px;
     }
+
     #game {
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     }
-  }
+
+    .estadisticas {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .card {
+        width: 40px;
+        height: 60px;
+    }
+
+    #game {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
+.cont-icono-atras {
+    width: 40px;
+    position: absolute;
+    top: 4%;
+    left: 1%;
+}
+
+.cont-icono-atras:hover {
+    animation: titilar 0.5s infinite forwards;
+}
+
+.cont-icono-atras img {
+    width: 100%;
+}
+
+@keyframes titilar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
