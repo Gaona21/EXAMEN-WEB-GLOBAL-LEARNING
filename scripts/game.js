@@ -66,12 +66,9 @@ function activate(e) {
 
                         document.getElementById('restart-btn').addEventListener('click', function () {
                             document.getElementById('modal').style.display = 'none';
+                            resetGame();
                         });
 
-                        if (document.querySelectorAll('.card.active').length === totalCards) {
-                            // Reiniciar el juego
-                            resetGame();
-                        }
                     }
 
                 }
@@ -106,13 +103,6 @@ function startCounter() {
     }, 1000);
 }
 
-// function saveGameStats(moves, time) {
-//     let gameStats = {
-//         moves: moves,
-//         time: time
-//     };
-//     localStorage.setItem('gameStats', JSON.stringify(gameStats));
-// }
 
 function saveGameStats(moves, time) {
     let gameStats = {
@@ -196,7 +186,7 @@ const startGameOverlay = document.getElementById('start-game-overlay');
 console.log(startGameBtn)
 
 startGameBtn.addEventListener('click', () => {
-    // audioFondo.play();
+   
     startGameOverlay.style.display = 'none';
     configurarAudio(audioFondo);
 });

@@ -18,7 +18,7 @@
     align-items: center;
     position: relative;
 
-    background-image: url("../img/—Slidesdocs—mesa de madera antigua sobre_9976643b15.jpg");
+    background-image: url("../img/wooden-wall-scratched-material-background-texture-concept.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -89,7 +89,7 @@
     overflow: hidden;
     position: relative;
 
-    background-image: url("../img/—Slidesdocs—mesa de madera antigua sobre_9976643b15.jpg");
+    background-image: url("../img/wooden-wall-scratched-material-background-texture-concept.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -149,6 +149,8 @@
     padding: 10px;
     display: none;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .titulo-carousel {
