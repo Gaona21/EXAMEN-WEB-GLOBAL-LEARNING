@@ -25,7 +25,7 @@ main {
 .cont-main {
     width: 90%;
     max-height: 100vh;
-    border: 1px solid #ccc;
+  
 }
 
 .buda-light {
@@ -71,7 +71,7 @@ h2 {
 h1 {
     color: beige;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 5px;
 }
 
@@ -153,8 +153,11 @@ footer {
 }
 
 #last-game-stats {
-    font-size: 1rem;
+    font-weight: bold; 
     color: beige;
+   background-color: #0411148b;
+   border-radius: 5px;
+   margin-top: 0.5rem;
 }
 
 .overlay {
@@ -203,10 +206,10 @@ footer {
 
 /* Media Query a partir de aqui*/
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .card {
-        /* width: 140px;
-        height: 195px; */
+        width: 160px;
+        height: 215px; 
     }
 
     #game {

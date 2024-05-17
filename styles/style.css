@@ -9,6 +9,14 @@
     list-style: none;
 }
 
+main {
+    justify-content: center;
+    text-align: center;
+    background-image: url("../img/wooden-wall-scratched-material-background-texture-concept.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .main-contenedor {
     width: 100%;
     height: 100vh;
@@ -17,10 +25,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-
-    background-image: url("../img/wooden-wall-scratched-material-background-texture-concept.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .menu-contenedor {
@@ -85,13 +89,15 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+}
 
-    background-image: url("../img/wooden-wall-scratched-material-background-texture-concept.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.contenedor-carousel h2 {
+ 
+    text-align: center;
 }
 
 .cont-icono-atras {
@@ -131,16 +137,16 @@
 .btn-derecha:hover {
     transform: scale(1.2);
     transition: all 0.2s ease;
-    /* filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); */
 }
 
 .carousel {
     width: 70%;
-    /* height: 500px; */
+    background-color: rgba(0, 0, 0, 0.552);
+    border-radius: 5px;
     height: 70%;
     padding: 20px;
-    border: 1px solid white;
     user-select: none;
+    font-size: xx-large;
 }
 
 .carousel-img {

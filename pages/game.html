@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/game.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/modal.css" />
     <title>Memo Cards</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="cont-icono-atras">
-            <a href="../index.html">
-                <img src="../assets/img/icon/volver atras.png" alt="icono volver atras" title="Atras">
-            </a>
+      <div class="cont-icono-atras">
+        <a href="../index.html">
+          <img
+            src="../assets/img/icon/volver atras.png"
+            alt="icono volver atras"
+            title="Atras"
+          />
+        </a>
+      </div>
+
+      <div id="start-game-overlay" class="overlay">
+        <div class="overlay-content">
+          <h2>¿Quieres empezar el juego?</h2>
+          <button id="start-game-btn">Si</button>
+          <a href="../index.html"><button id="back-btn">No</button></a>
         </div>
+      </div>
 
-        <div id="start-game-overlay" class="overlay">
-            <div class="overlay-content">
-                <h2>¿Quieres empezar el juego?</h2>
-                <button id="start-game-btn">Si</button>
-                <a href="../index.html"><button id="back-btn">No</button></a>
-            </div>
+      <div class="cont-main">
+        <h1>Memo Cards</h1>
+
+        <div class="container">
+          <section class="section1">
+            <div id="game"></div>
+          </section>
+
+          <section class="section2">
+            <h2 id="stats" class="estadisticas">Movimientos: 0</h2>
+            <h2 id="t-restante" class="estadisticas">Tiempo: 0 segundos</h2>
+            <div id="last-game-stats"></div>
+          </section>
         </div>
-
-        <div class="cont-main">
-            <h1>Memo Cards</h1>
-
-            <div class="container">
-                <section class="section1">
-                    <div id="game"></div>
-                </section>
-
-                <section class="section2">
-                    <h2 id="stats" class="estadisticas">Movimientos: 0</h2>
-                    <h2 id="t-restante" class="estadisticas">Tiempo: 0 segundos</h2>
-                    <div id="last-game-stats"></div>
-                </section>
-            </div>
-        </div>
-
-
+      </div>
+      <!--
+<div>
+    <button id="pauseButton">Pausar</button>
+    <button id="resumeButton">Reanudar</button>
+</div>-->
     </main>
     <script src="../scripts/game.js"></script>
     <script src="../scripts/modal.js"></script>
-</body>
-
+  </body>
 </html>
