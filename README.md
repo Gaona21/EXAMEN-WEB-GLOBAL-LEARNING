@@ -28,4 +28,4 @@ Memo Cards es un juego clásico de memoria en el que el objetivo es encontrar to
 - **[Emanuel Gaona Correa](https://github.com/Gaona21)**
   
 ## Link al juego
-- **[MemoTest](https://gaona21.github.io/EXAMEN-WEB-GLOBAL-LEARNING/)**
+- **[Memo Cards](https://gaona21.github.io/EXAMEN-WEB-GLOBAL-LEARNING/)**
