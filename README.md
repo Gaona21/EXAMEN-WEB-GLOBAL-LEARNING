@@ -26,3 +26,6 @@ Memo Cards es un juego clásico de memoria en el que el objetivo es encontrar to
 
 - **[Brenda Herrera](https://github.com/BrendaRuthHerrera).**
 - **[Emanuel Gaona Correa](https://github.com/Gaona21)**
+  
+## Link al juego
+- **[MemoTest](https://gaona21.github.io/EXAMEN-WEB-GLOBAL-LEARNING/)**
